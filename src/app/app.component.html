@@ -1,0 +1,43 @@
+<div>Hello Angular by Bank {{ title }}</div>
+
+@if (isAdmin) {
+  <div>You are Admin</div>
+} @else {
+  <div>Not Admin</div>
+}
+
+<div>For Example</div>
+<ul>
+  @for (user of users; track $index) {
+    <li>{{ $index}} : {{ user }}</li>
+  }
+</ul>
+
+<!-- <app-employee></app-employee> -->
+
+<div>First Name = <input [(ngModel)]="fname"/></div>
+<div>Last Name = <input [(ngModel)]="lname"/></div>
+<div>{{ fname }} {{ lname}}</div>
+
+<div (click)="toggle()">
+  <input type="checkbox" [(ngModel)]="checked" />
+  click here for toggle
+</div>
+
+<button (click)="myFunction()">show alert</button>
+
+<app-employee [fullName]="fullName"></app-employee>
+
+<h1>Angular Router App</h1>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/firstPage/10">First Page</a>
+    </li>
+    <li>
+      <a routerLink="/secondPage">Second Page</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
